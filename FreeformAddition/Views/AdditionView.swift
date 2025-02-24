@@ -20,38 +20,33 @@ struct AdditionView: View {
             if let addition = viewModel.addition {
                 
                 
-                HStack(alignment: .center) {
+                HStack {
                     
-                    if addition.number1 < 0 {
-                        Text("(\(addition.number1.formatted()))")
-                            .font(.system(size: 96))
-                    } else {
-                        Text("\(addition.number1.formatted())")
-                            .font(.system(size: 96))
+                    Group {
+                        
+                        if addition.number1 < 0 {
+                            Text("(\(addition.number1.formatted()))")
+                        } else {
+                            Text("\(addition.number1.formatted())")
+                        }
+                        
+                        Text("+")
+                        
+                        if addition.number2 < 0 {
+                            Text("(\(addition.number2.formatted()))")
+                        } else {
+                            Text("\(addition.number2.formatted())")
+                            
+                        }
+                        
+                        Text("=")
+                        
+                        Text("\(addition.result.formatted())")
                         
                     }
-                    
-                    
-                    Text("+")
-                        .font(.system(size: 96))
-                    
-                    if addition.number2 < 0 {
-                        Text("(\(addition.number2.formatted()))")
-                            .font(.system(size: 96))
-                    } else {
-                        Text("\(addition.number2.formatted())")
-                            .font(.system(size: 96))
-                        
-                    }
-                    
-                    
-                    Text("=")
-                        .font(.system(size: 96))
-                    
-                    Text("\(addition.result.formatted())")
-                        .font(.system(size: 96))
-                    
-                    
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.25)
+                    .font(.system(size: 96))
                     
                     
                 }
@@ -70,10 +65,10 @@ struct AdditionView: View {
             }
             
             // INPUT
-            TextField("Base", text: $viewModel.providedNumber1)
+            TextField("#1", text: $viewModel.providedNumber1)
                 .textFieldStyle(.roundedBorder)
             
-            TextField("Exponent", text: $viewModel.providedNumber2)
+            TextField("#2", text: $viewModel.providedNumber2)
                 .textFieldStyle(.roundedBorder)
             
             // Extra space at bottom
