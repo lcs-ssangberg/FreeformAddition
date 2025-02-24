@@ -1,5 +1,5 @@
 import SwiftUI
- 
+
 struct AdditionView: View {
     
     // MARK: Stored properties
@@ -7,7 +7,7 @@ struct AdditionView: View {
     // Holds the view model, to track current state of
     // data within the app
     @State var viewModel = AdditionViewModel()
- 
+    
     // MARK: Computed properties
     var body: some View {
         VStack {
@@ -16,60 +16,53 @@ struct AdditionView: View {
             Spacer()
             
             // OUTPUT
-            // When the power can be unwrapped, show the result
-            if let power = viewModel.power {
+            // When the addition can be unwrapped, show the result
+            if let addition = viewModel.addition {
                 
-                // Show the provided base, exponent, and result
-                // in an arrangement that looks the same as how
-                // we write a power on paper in math class
+                
                 HStack(alignment: .center) {
-                    HStack(alignment: .top) {
-                        if power.base < 0 {
-                            Text("(\(power.base.formatted()))")
-                                .font(.system(size: 96))
-                        } else {
-                            Text("\(power.base.formatted())")
-                                .font(.system(size: 96))
-
-                        }
-                        
-                        Text("\(power.exponent.formatted())")
-                            .font(.system(size: 44))
-                    }
-                    HStack {
- 
-                        Text("=")
+                    
+                    if addition.number1 < 0 {
+                        Text("(\(addition.number1.formatted()))")
+                            .font(.system(size: 96))
+                    } else {
+                        Text("\(addition.number1.formatted())")
                             .font(.system(size: 96))
                         
-                        //checking pos/neg exponents
-                        if power.exponent >= 0 {
-                            Text("\(power.result.formatted())")
-                                .font(.system(size: 96))
-                        } else {
-                            VStack(spacing: 0) {
-                                Text("1")
-                                    .font(.system(size: 96))
-                                
-                                Rectangle()
-                                    .frame(height: 3)
-                                
-                                Text("\(power.result.formatted())")
-                                    .font(.system(size: 96))
-                            }
-                        }
-
                     }
+                    
+                    
+                    Text("+")
+                        .font(.system(size: 96))
+                    
+                    if addition.number2 < 0 {
+                        Text("(\(addition.number2.formatted()))")
+                            .font(.system(size: 96))
+                    } else {
+                        Text("\(addition.number2.formatted())")
+                            .font(.system(size: 96))
+                        
+                    }
+                    
+                    
+                    Text("=")
+                        .font(.system(size: 96))
+                    
+                    Text("\(addition.result.formatted())")
+                        .font(.system(size: 96))
+                    
+                    
+                    
+                    
                 }
-                .lineLimit(1)
-                .minimumScaleFactor(0.5)
-                .frame(height: 300)
- 
+                
+                
             } else {
                 
                 // Show a message indicating that we are
                 // awaiting reasonable input
                 ContentUnavailableView(
-                    "Unable to evaluate power",
+                    "Unable to evaluate equation",
                     systemImage: "gear.badge.questionmark",
                     description: Text(viewModel.recoverySuggestion)
                 )
@@ -77,20 +70,20 @@ struct AdditionView: View {
             }
             
             // INPUT
-            TextField("Base", text: $viewModel.providedBase)
+            TextField("Base", text: $viewModel.providedNumber1)
                 .textFieldStyle(.roundedBorder)
             
-            TextField("Exponent", text: $viewModel.providedExponent)
+            TextField("Exponent", text: $viewModel.providedNumber2)
                 .textFieldStyle(.roundedBorder)
- 
+            
             // Extra space at bottom
             Spacer()
         }
         .padding()
     }
- 
+    
 }
- 
+
 #Preview {
     AdditionView()
 }

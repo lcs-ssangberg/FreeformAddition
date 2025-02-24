@@ -23,17 +23,17 @@ class AdditionViewModel {
    
    // MARK: Computed properties
    // Holds the evaluated power, when the input provided is valid
-   var power: Addition? {
+   var addition: Addition? {
        
        //check that #1 is a double
-       guard let number1value = Double(providedNumber1) else {
+       guard let number1 = Double(providedNumber1) else {
            recoverySuggestion = "Please provide a numeric value for the first number."
            
            return nil
        }
        
        //check that #2 is a double
-       guard let number2value = Double(providedNumber2) else {
+       guard let number2 = Double(providedNumber2) else {
            recoverySuggestion = "Please provide an numeric value for the second number."
            
            return nil
@@ -41,15 +41,15 @@ class AdditionViewModel {
        
        // Now that we know the base and exponent have valid values, return the evaluated power
        recoverySuggestion = "" // No error message
-       return Addition(number1: number1value, number2: number2value)
+       return Addition(number1: number1, number2: number2)
        
    }
    
    
    //MARK: initalizers
    init(
-       providedBase: String = "",
-       providedExponent: String = "",
+       providedNumber1: String = "",
+       providedNumber2: String = "",
        recoverySuggestion: String = ""
    ) {
        self.providedNumber1 = providedNumber1
