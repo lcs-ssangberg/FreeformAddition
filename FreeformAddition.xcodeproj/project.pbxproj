@@ -10,9 +10,9 @@
 		49A7570E2D68E57B00BA5776 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A757062D68E57B00BA5776 /* Preview Assets.xcassets */; };
 		49A7570F2D68E57B00BA5776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A7570A2D68E57B00BA5776 /* Assets.xcassets */; };
 		49A757102D68E57B00BA5776 /* FreeformAdditionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7570B2D68E57B00BA5776 /* FreeformAdditionApp.swift */; };
-		49A757112D68E57B00BA5776 /* PowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7570C2D68E57B00BA5776 /* PowerView.swift */; };
-		49A757132D68E62300BA5776 /* Power.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A757122D68E62300BA5776 /* Power.swift */; };
-		49A757152D68E68800BA5776 /* PowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A757142D68E68800BA5776 /* PowerViewModel.swift */; };
+		49A757112D68E57B00BA5776 /* AdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7570C2D68E57B00BA5776 /* AdditionView.swift */; };
+		49A757132D68E62300BA5776 /* Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A757122D68E62300BA5776 /* Addition.swift */; };
+		49A757152D68E68800BA5776 /* AdditionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A757142D68E68800BA5776 /* AdditionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,9 +20,9 @@
 		49A757062D68E57B00BA5776 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49A7570A2D68E57B00BA5776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A7570B2D68E57B00BA5776 /* FreeformAdditionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeformAdditionApp.swift; sourceTree = "<group>"; };
-		49A7570C2D68E57B00BA5776 /* PowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerView.swift; sourceTree = "<group>"; };
-		49A757122D68E62300BA5776 /* Power.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Power.swift; sourceTree = "<group>"; };
-		49A757142D68E68800BA5776 /* PowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewModel.swift; sourceTree = "<group>"; };
+		49A7570C2D68E57B00BA5776 /* AdditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionView.swift; sourceTree = "<group>"; };
+		49A757122D68E62300BA5776 /* Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addition.swift; sourceTree = "<group>"; };
+		49A757142D68E68800BA5776 /* AdditionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 		49A757052D68E57B00BA5776 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				49A757122D68E62300BA5776 /* Power.swift */,
+				49A757122D68E62300BA5776 /* Addition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -71,7 +71,7 @@
 		49A757082D68E57B00BA5776 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				49A757142D68E68800BA5776 /* PowerViewModel.swift */,
+				49A757142D68E68800BA5776 /* AdditionViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 		49A757092D68E57B00BA5776 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				49A7570C2D68E57B00BA5776 /* PowerView.swift */,
+				49A7570C2D68E57B00BA5776 /* AdditionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,10 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A757152D68E68800BA5776 /* PowerViewModel.swift in Sources */,
+				49A757152D68E68800BA5776 /* AdditionViewModel.swift in Sources */,
 				49A757102D68E57B00BA5776 /* FreeformAdditionApp.swift in Sources */,
-				49A757132D68E62300BA5776 /* Power.swift in Sources */,
-				49A757112D68E57B00BA5776 /* PowerView.swift in Sources */,
+				49A757132D68E62300BA5776 /* Addition.swift in Sources */,
+				49A757112D68E57B00BA5776 /* AdditionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

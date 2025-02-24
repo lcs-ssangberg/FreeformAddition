@@ -11,7 +11,7 @@ import SwiftUI
 struct FreeformAdditionApp: App {
     var body: some Scene {
         WindowGroup {
-            PowerView()
+            AdditionView()
         }
     }
 }

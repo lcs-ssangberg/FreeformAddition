@@ -9,13 +9,13 @@ import Foundation
 
 @Observable
 // VIEW MODEL
-class PowerViewModel {
+class AdditionViewModel {
    
    // MARK: Stored properties
    
    // Holds whatever the user has typed in the text fields
-   var providedBase: String
-   var providedExponent: String
+   var providedNumber1: String
+   var providedNumber2: String
    
    // Holds an appropriate error message, if there was a
    // problem with input provided by the user
@@ -23,29 +23,25 @@ class PowerViewModel {
    
    // MARK: Computed properties
    // Holds the evaluated power, when the input provided is valid
-   var power: Power? {
+   var power: Addition? {
        
-       // First check that the string in providedBase can
-       // be converted into a number, then check that the
-       // value is more than 0
-       guard let base = Double(providedBase) else {
-           recoverySuggestion = "Please provide a numeric value for the base of the power."
+       //check that #1 is a double
+       guard let number1value = Double(providedNumber1) else {
+           recoverySuggestion = "Please provide a numeric value for the first number."
            
            return nil
        }
        
-       // Now check that the string in providedExponent can be
-       // converted into an integer, and that the value is
-       // more than or equal to 1
-       guard let exponent = Int(providedExponent) else {
-           recoverySuggestion = "Please provide an integer value of 0 or greater for the exponent."
+       //check that #2 is a double
+       guard let number2value = Double(providedNumber2) else {
+           recoverySuggestion = "Please provide an numeric value for the second number."
            
            return nil
        }
        
        // Now that we know the base and exponent have valid values, return the evaluated power
        recoverySuggestion = "" // No error message
-       return Power(base: base, exponent: exponent)
+       return Addition(number1: number1value, number2: number2value)
        
    }
    
@@ -56,8 +52,8 @@ class PowerViewModel {
        providedExponent: String = "",
        recoverySuggestion: String = ""
    ) {
-       self.providedBase = providedBase
-       self.providedExponent = providedExponent
+       self.providedNumber1 = providedNumber1
+       self.providedNumber2 = providedNumber2
        self.recoverySuggestion = recoverySuggestion
    }
    

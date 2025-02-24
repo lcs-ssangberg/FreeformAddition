@@ -1,12 +1,12 @@
 import SwiftUI
  
-struct PowerView: View {
+struct AdditionView: View {
     
     // MARK: Stored properties
     
     // Holds the view model, to track current state of
     // data within the app
-    @State var viewModel = PowerViewModel()
+    @State var viewModel = AdditionViewModel()
  
     // MARK: Computed properties
     var body: some View {
@@ -92,5 +92,5 @@ struct PowerView: View {
 }
  
 #Preview {
-    PowerView()
+    AdditionView()
 }
